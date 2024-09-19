@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prost - Wave</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/rogo.png" alt="Prost Logo" class="logo">
+        <nav>
+            <a href="home.html">ホーム</a>
+            <a href="profile.html">Myプロフィール</a>
+        </nav>
+    </header>
+    <main>
+        <h2>udon&bar wave</h2>
+        <div class="bar-gallery">
+            <img src="images/wave.png" alt="Bar 1" style="width: 300px; height: auto;">
+        </div>
+        <div class="bar-info">
+            <p>住所: 高松市瓦町１丁目 11-33土居ビル1F</p>
+            <p>営業時間: 22:00 - 01:00</p>
+            <p>チャージ料金: 500円</p>
+            <p>基本料金: ノンアル - 600円, カクテル - 800円～</p>
+            <p>120分飲み放題 3000円!!</p>
+            <p>ダーツ カラオケ 各種ゲーム有</p>
+            <p>連携サービス: ダーツ1ゲーム無料</p>
+            <p>
+                <a href="https://www.instagram.com/udon.bar_wave?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram-link">
+                    <img src="images/instagram-icon.png" alt="Instagram" class="instagram-icon"> udon.bar_wave
+                </a>
+            </p>
+        </div>
+        <div class="reviews">
+            <h3>レビュー</h3>
+            <!-- レビュー入力 -->
+
+            <form action="submit_review.php" method="post">
+                <label for="rating">評価:</label>
+                <select id="rating" name="rating" required>
+                    <option value="1">★1</option>
+                    <option value="2">★2</option>
+                    <option value="3">★3</option>
+                    <option value="4">★4</option>
+                    <option value="5">★5</option>
+                </select>
+                <br>
+                <label for="comment">コメント:</label>
+                <textarea id="comment" name="comment" required></textarea>
+                <br>
+                <button type="submit">送信</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Prost</p>
+    </footer>
+</body>
+</html>

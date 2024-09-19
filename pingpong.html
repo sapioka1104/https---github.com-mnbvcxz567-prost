@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prost - Pingpong</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/rogo.png" alt="Prost Logo" class="logo">
+        <nav>
+            <a href="home.html">ホーム</a>
+            <a href="profile.html">Myプロフィール</a>
+        </nav>
+    </header>
+    <main>
+        <h2>ping pong bar 39</h2>
+        <div class="bar-gallery">
+            <img src="images/pingpong.png" alt="Bar 3" style="width: 300px; height: auto;">
+        </div>
+        <div class="bar-info">
+            <p>住所: 古馬場町7-21 AKビルⅢ2階</p>
+            <p>営業時間: 20:30 - 00:00</p>
+            <p>(時間変更などInstagramストーリーで更新してます)</p>
+            <p>連絡先: 087-800-0777</p>
+            <p>チャージ料金:1000円</p>
+            <p>基本料金: カクテル - 700円～</p>
+            <p>連携サービス: チャージ代無料</p>
+            <p>ご予約、お問い合わせDMからも受け付けております。</p>
+            <p>
+                <a href="https://www.instagram.com/ping_pong_bar_39?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram-link">
+                    <img src="images/instagram-icon.png" alt="Instagram" class="instagram-icon"> ping_pong_bar_39
+                </a>
+            </p>
+        </div>
+        <div class="reviews">
+            <h3>レビュー</h3>
+            <!-- レビュー入力 -->
+            <form action="submit_review.php" method="post" class="review-form">
+                <label for="rating">評価:</label>
+                <select id="rating" name="rating" required>
+                    <option value="1">★1</option>
+                    <option value="2">★2</option>
+                    <option value="3">★3</option>
+                    <option value="4">★4</option>
+                    <option value="5">★5</option>
+                </select>
+                <br>
+                <label for="comment">コメント:</label>
+                <textarea id="comment" name="comment" required></textarea>
+                <br>
+                <button type="submit">送信</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Prost</p>
+    </footer>
+</body>
+</html>

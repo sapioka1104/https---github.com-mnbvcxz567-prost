@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prost - アカウント作成</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Prost</h1>
+    </header>
+    <main>
+        <h2>アカウント作成</h2>
+        <form id="signup-form">
+            <label for="name">名前:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="age">年齢:</label>
+            <input type="number" id="age" name="age" required>
+            <label for="phone">電話番号:</label>
+            <input type="text" id="phone" name="phone" required>
+            <button type="submit">アカウント作成</button>
+        </form>
+        <div id="error-message" style="color: red; display: none;">エラーが発生しました。もう一度お試しください。</div>
+
+        <script>
+            document.getElementById('signup-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // フォームのデフォルト動作を防ぐ
+        
+                const formData = new FormData(this);
+                const data = {
+                    name: formData.get('name'),
+                    age: formData.get('age'),
+                    phone: formData.get('phone'),
+                    coupon: '0' // couponは常に0
+                };
+        
+                fetch('server.php', {  // server.php を指定
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('アカウントが作成されました。');
+                    } else {
+                        document.getElementById('error-message').style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('エラー:', error);
+                    document.getElementById('error-message').style.display = 'block';
+                });
+            });
+        </script>
+        
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Prost</p>
+    </footer>
+</body>
+</html>
